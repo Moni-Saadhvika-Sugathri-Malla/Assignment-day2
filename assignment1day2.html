@@ -1,0 +1,46 @@
+<html>
+  <head>
+  <title>JavaScript current day and time</title>
+  </head>
+  <body>
+        <script>
+        var today = new Date();
+        var day = today.getDay();
+        var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+        console.log("Today is : " + daylist[day] + ".");
+        //check out output using f12
+        var hour = today.getHours();
+        var minute = today.getMinutes();
+        var second = today.getSeconds();
+        var X = (hour >= 12)? " PM ":" AM ";
+        hour = (hour >= 12)? hour - 12: hour;
+        if (hour===0 && X===' PM ') 
+        {  
+        if (minute===0 && second===0)
+        { 
+        hour=12;
+        X=' Noon';
+        } 
+        else
+        { 
+        hour=12;
+        X=' PM';
+        } 
+        } 
+        if (hour===0 && X===' AM ') 
+        {  
+        if (minute===0 && second===0)
+        { 
+        hour=12;
+        X=' Midnight';
+        } 
+        else
+        { 
+        hour=12;
+        X=' AM';
+        } 
+        } 
+        console.log("Current Time : "+hour + X + " : " + minute + " : " + second);//use f12 to check o/p
+        </script>
+  </body>
+</html>
